@@ -1,4 +1,4 @@
-CREATE SEQUENCE IF NOT EXISTS popes_id_seq;
+CREATE SEQUENCE popes_id_seq;
 
 CREATE TABLE popes AS
 SELECT
@@ -17,7 +17,6 @@ SELECT
 FROM read_csv('{csv_path}',
 header=TRUE,
 auto_detect=TRUE,
-dateformat='%Y-%m-%d',
 nullstr=['NA']);
 
 ALTER TABLE popes ADD CONSTRAINT popes_pk PRIMARY KEY (id);
